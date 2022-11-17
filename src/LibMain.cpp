@@ -1,11 +1,9 @@
 #include "LibMain.h"
-//#include <cstdint>
 
 using GPUtils = gigperformer::sdk::GPUtils;
 
 // Define an XML string describing your product
 const std::string XMLProductDescription =
-    // Replace with your information
     "<Library>"
     "  <Product"
     "    Name=\"Plugin Sync\""
@@ -16,7 +14,7 @@ const std::string XMLProductDescription =
     "  <ImagePath></ImagePath>"
     "</Library>";
 
- std::string localHandlePrefix = "LOCAL_";
+const std::string localHandlePrefix = "LOCAL_";
 const std::string globalHandlePrefix = "GLOBAL_";
 
 void LibMain::Initialization()

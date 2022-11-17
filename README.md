@@ -1,41 +1,18 @@
-# GP Extension example for C++
+# Sync Global Rackspace Plugin with Local Rackspace Plugin
 
-This is an example extension using the [Gig Performer SDK](https://github.com/gigperformer/gp-sdk).
-You can use it as a base for your own extensions developed in plain C++ (without JUCE).
+## Overview
+Small test extension for Gig Performer that uses the GP Script 'handles' to link a global rackspace plugin to a local rackspace plugin, and then sync their parameter values (local plugin is the master) when the rackspace is first activated.
 
-## How to build...
+## Usage
+Add a GP Script handle to a local rackspace plugin in the format:
+```
+ LOCAL_1
+ ```
+Add a matching GP Script handle to a global rackspace plugin in the format:
+```
+ GLOBAL_1
+ ```
 
-### ... on macOS
+ When switching to the local rackspace, the global plugin will be updated to match the parameter values of the local plugin.
 
--   Make sure you have [CMake](https://cmake.org) installed.
-    You might have to add the path to the cmake executable by adding this line to your bash profile:
-
-    ```bash
-    export PATH=/Applications/CMake.app/Contents/bin:$PATH
-    ```
-
-    Alternatively, you can install CMake via [Homebrew](https://brew.sh):
-
-    ```bash
-    brew install cmake
-    ```
-
--   Build (and install) the project via CMake.
-    For your convenience we have provided a `build.sh` which contains all necessary commands:
-
-    ```bash
-    ./build.sh
-    ```
-
-### ... on Windows
-
--   Make sure you have [CMake](https://cmake.org), [Git](https://git-scm.com) and a C(++) compiler installed.
-    You can get that for example by installing [Visual Studio](https://visualstudio.microsoft.com) with the _Desktop development with C++_ workload and the _Git for Windows_ component.
--   Build (and install) the project via CMake.
-    For your convenience we have provided a `build.cmd` which contains all necessary commands:
-
-    ```bash
-    build.cmd
-    ```
-
-    **Make sure to run the script from the Visual Studio developer command prompt!**
+ The above handle format can be repeated for as many plugins as you need to sync.
