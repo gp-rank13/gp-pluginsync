@@ -13,7 +13,6 @@ class LibMain : public gigperformer::sdk::GigPerformerAPI
     ~LibMain() override { }
 
     void OnRackspaceActivated() override;
-    void OnVariationChanged(int oldIndex, int newIndex) override;
     void Initialization() override;
     void SyncPlugins();
     std::string GetProductDescription() override;

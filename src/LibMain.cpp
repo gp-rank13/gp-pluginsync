@@ -21,7 +21,6 @@ const std::string globalHandlePrefix = "GLOBAL_";
 
 void LibMain::Initialization()
 {
-    registerCallback("OnVariationChanged");
     registerCallback("OnRackspaceActivated");
 }
 
@@ -51,11 +50,6 @@ void LibMain::SyncPlugins()
     
 }
 void LibMain::OnRackspaceActivated() 
-{
-    SyncPlugins();
-}
-
-void LibMain::OnVariationChanged(int oldIndex, int newIndex) 
 {
     SyncPlugins();
 }
